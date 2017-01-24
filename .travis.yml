@@ -23,6 +23,7 @@ addons:
 
 # Build steps
 script:
+  - echo $CXX && echo $CC
   - mkdir build
   - cd build
   - cmake .. && make
