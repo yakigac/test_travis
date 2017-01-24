@@ -10,6 +10,12 @@ set(CMAKE_CXX_FLAGS "-std=c++1y -Wall -Wextra")
 # set output directories
 set( EXECUTEABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE PATH "Output directory for executables")
 
+# opencv
+find_package( OpenCV REQUIRED )
+message(STATUS "OpenCV version = ${OpenCV_VERSION}")
+message(STATUS "OpenCV library dir = ${OpenCV_LIB_DIR}")
+message(STATUS "OpenCV include dir = ${OpenCV_INCLUDE_DIRS}")
 
 add_executable(main main.cpp)
+target_link_libraries(main ${OpenCV_LIBS})
 message(STATUS "main")
