@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 # Enable C++ support
 language: cpp
@@ -9,6 +9,8 @@ compiler:
   - g++
 
 install:
+  - sudo apt-get update
+  - sudo apt-get install libopencv-dev
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
 
 addons:
