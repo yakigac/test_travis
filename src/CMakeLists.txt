@@ -18,5 +18,5 @@ set( EXECUTEABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE PATH "Output director
 
 
 add_executable(main main.cpp)
-target_link_libraries(main ${Boost_LIBRARIES}))
+target_link_libraries(main ${Boost_LIBRARIES})
 message(STATUS "main")
