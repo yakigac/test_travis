@@ -9,22 +9,22 @@ compiler:
   - g++
 
 install:
-  - sudo apt-get update
-  - sudo apt-get install libopencv-dev
   - if [ "$CXX" = "g++" ]; then export CXX="g++-5" CC="gcc-5"; fi
 
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - llvm-toolchain-precise-3.7
-      - llvm-toolchain-precise
+      - boost-latest
     packages:
-      - clang-3.7
       - g++-5
+      - libopencv-dev
+      - libboost1.55-all-dev
 
 # Build steps
 script:
   - mkdir build
   - cd build
-  - cmake .. && make
+  - cmake ..
+  - make
+  - ./src/main --help
