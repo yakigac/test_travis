@@ -10,8 +10,8 @@ int main(int argc, char* argv[]){
     po::options_description desc("Allowed options");
 
 	desc.add_options()
-		("help, a", "produce help message")
-		("greet, b", po::value<std::string>(), "hi")
+		("help,a", "produce help message")
+		("greet,b", po::value<std::string>(), "hi")
 	;
 
 	po::variables_map vm;
